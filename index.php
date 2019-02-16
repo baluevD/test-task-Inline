@@ -6,11 +6,11 @@ require_once 'classes/MyLogger.php';
 require_once 'classes/PDOAdapter.php';
 
 // just for debugging
-function print_r2($val){
-        echo '<pre>';
-        print_r($val);
-        echo  '</pre>';
-}
+// function print_r2($val){
+//         echo '<pre>';
+//         print_r($val);
+//         echo  '</pre>';
+// }
 
 // connection parameters
 $host = 'localhost';
@@ -50,7 +50,7 @@ $pdoObject->executePrepared($stmtUpdAnyPerson, [$maxAge,$anyPersonId]);
 $maxAgePersons = $pdoObject->execute('selectAll','SELECT lastname, firstname FROM person
 WHERE age = (SELECT MAX(age) FROM person)');
 
-// checkeng queries and values
+// checking queries and values
 // print_r2($pdoObject);
 //
 // print_r2($maxAgeQuery);
